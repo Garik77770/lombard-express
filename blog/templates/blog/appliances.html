@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+        <div class="callout">
+                 <div class="container">
+            <img class='square article-image' src='{{ image.url  }}'>
+
+            <h2> Бытовая техника </h2>
+            <p>Крупногабаритную технику (вытяжки, духовые шкафы, холодильники, морозильники, плиты,
+                стиральные машины и другое).
+                Мелкую бытовую технику для кухни (мультиварки, хлебопечки, пароварки, мясорубки,
+                кофеварки, микроволновые печи, кухонные комбайны и другое).
+                Мелкую бытовую технику для дома (пылесосы, утюги, пароочистители и другое).
+                Технику для красоты и здоровья (фены, тонометры, стайлеры, весы и другое).
+                Швейное оборудование (швейные машины и оверлоки).
+                Климатическую технику (кондиционеры, вентиляторы,
+                обогреватели, очистители воздуха и другое).
+
+                Требование к залоговому имуществу: товарный вид,
+                чистое и без посторонних неприятных запахов,
+                отсутствие механических повреждений, рабочее состояние, полная комплектность.
+
+                Оценка залога зависит года выпуска, производителя и модели, внешнего вида,
+                наличия упаковки, гарантийного талона, комплектности и спроса на данное имущество. </p>
+
+
+            <div>
+                <p class="mb-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lombard-express
+                    ©
+                </font></font></p>
+                <p class="mb-0"><font style="vertical-align: inherit;"><font
+                        style="vertical-align: inherit;">Lombard-express@gmail.com
+                </font></font><a href="{% url 'blog-home' %}"><font style="vertical-align: inherit;"><font
+                        style="vertical-align: inherit;">Переход на главную страницу</font></font>
+
+
+            </div>
+            <a href="{% url 'modal' %}" class="button openModal">Заказать обратный звонок</a>
+            {% endblock content %}

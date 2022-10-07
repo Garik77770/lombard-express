@@ -1,0 +1,88 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ломбард-экспресс
+            </font></font></h1>
+            <a href="{% url 'contact' %}" type="button" class="btn btn-success">Заказать оценку
+            </a>
+            </p>
+        </div>
+    </div>
+    Условия займа под залог автомобиля:
+    ежедневная процентная ставка – 0,5%;
+    при заключении договора на сумму от 6000 бел.руб. ставка - 0,3% в день;
+    срок займа – до 30 дней с возможностью продления договора;
+    размер займа – до 80% от рыночной стоимости вашего автомобиля
+</section>
+</head>
+
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+<head>
+<body>
+<div class="container text-center">
+    <div class="row g-2">
+        <div class="col-6">
+            <div class="p-3 border bg-light">Требование к авто:
+                ваш автомобиль должен быть не старше 15 лет;
+                мы принимаем под залог только исправные автомобили;
+                автомобиль не должен находиться в залоге.
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="p-3 border bg-light">Требования к заемщику:
+                возраст – от 18 лет;
+                гражданство Республики Беларусь.
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="p-3 border bg-light">Документы для оформления займа
+                Чтобы оформить заём в ломбарде «ВамДеньги», вам не понадобится справка с места работы и участие
+                поручителей. Договор, составленный специалистами с большим опытом, станет надежной гарантией вашей
+                юридической безопасности. Все, что вам нужно для оформления займа:
+
+                паспорт гражданина Республики Беларусь;
+                свидетельство о регистрации транспортного средства;
+                страховой полис обязательного страхования гражданской ответственности владельцев транспортных средств на
+                территории Республики Беларусь;
+                анкета, которую вы сможете заполнить в офисе компании.
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="p-3 border bg-light">Преимущества сотрудничества с ломбардом «Lombard-express»
+                Мы оценим ваш автомобиль по достоинству.
+                Весь срок автозалога ваш автомобиль будет находиться на охраняемой стоянке.
+                Дополнительной гарантией сохранности вашего имущества станет страхование, которому подлежат все виды
+                залога в нашем ломбарде.
+                Срок договора на автозайм может быть пролонгирован.
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-muted py-5">
+    <div>
+        <p class="float-end mb-1">
+            <a href="#"><font style="vertical-align: inherit;"><font
+                    style="vertical-align: inherit;">Вернуться к
+                вершине</font></font></a>
+        </p>
+        <p class="mb-1"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Lombard-express ©
+        </font></font></p>
+        <p class="mb-0"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Lombard-express@gmail.com
+        </font></font><a href="{% url 'blog-home' %}"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Переход на главную страницу</font></font>
+
+
+        </div>
+    </div>
+</footer>
+</body>
+
+
+</html>
+{% endblock content %}

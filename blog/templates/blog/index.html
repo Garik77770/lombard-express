@@ -1,0 +1,85 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ломбард-экспресс
+            </font></font></h1>
+                          <a href="{% url 'contact' %}" type="button" class="btn btn-success
+
+
+">Заказать оценку
+
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+{% for post in posts %}
+<h1><a href="{% url 'post-detail' post.pk %}">{{ post.title}}</a></h1>
+<img class='rounded square article-image' src='{{ post.author.profile.image.url }}'>
+<a class='mr-2' href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+<p>By {{ post.author }} on {{ post.date_posted | date:"F d, Y" }}</p>
+<img class='square article-img' src='{{ post.image.url }}'>
+
+
+
+<p>{{ post.content }}</p>
+{% endfor %}
+{% if is_paginated %}
+{% if page_obj.has_previous %}
+<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Prev</a>
+{% endif %}
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+{% if page_obj.has_next %}
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+{% endif %}
+<footer class="text-muted py-5">
+    <div>
+        <p class="float-end mb-1">
+            <a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вернуться к
+                вершине</font></font></a>
+        </p>
+        <p class="mb-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lombard-express ©
+        </font></font></p>
+        <p class="mb-0"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Lombard-express@gmail.com
+
+<main role="main">
+        {% for article in articles %}
+            <div>
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1 class="display-4"> {{ article.name }} </h1>
+                        <p> {{ article.text }} </p>
+                    </div>
+                </div>
+                <div class="container mb-5">
+                    <div class="row">
+                        {% for product in article.products.all %}
+                            <div class="col-md-4">
+                                <h2>{{ product.title }}</h2>
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img src="{{ product.image.url }}" width="120">
+                                </a>
+                                <p>{{ product.description }}</p>
+                                {% include 'add_to_cart.html' %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}
